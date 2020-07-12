@@ -20,7 +20,7 @@
                 <div class="card-content blue">
                     <span class="card-title center">New Cases Today</span>
                     <div class="card-content center">
-                        <h1>{{oklahomaData.data[0].positiveIncrease}}</h1>
+                        <h1>{{oklahomaData[0].positiveIncrease}}</h1>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="row in oklahomaData.data">
+                    <tr v-for="row in oklahomaData">
                         <td>{{row.date}}</td>
                         <td>{{row.positive}}</td>
                         <td>{{row.negative}}</td>
@@ -52,6 +52,11 @@
 </div>
 
 <body>
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
